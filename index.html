@@ -11,8 +11,8 @@
 
 <body id="body">
     <section id="pizzada-title">
-        ピザ打
-        <a onclick="Pizzada.pizza()">スタート</a>
+        ピザ打<br>
+        <a onclick="Pizzada.pizza()">スタート</a><br>
         <a onclick="Pizzada.section('pizzada-ranking')">ランキング</a>
     </section>
 
@@ -24,11 +24,13 @@
     <section id="pizzada-game">
             <div id="pizzada-target"></div>
             <div id="pizzada-enter"></div>
+            <div id="pizzada-times"></div>
     </section>
 
     <section id="pizzada-result">
         結果：
         <div id="pizzada-time">0</div>
+        <a onclick="Pizzada.section('pizzada-title')">タイトルへ</a>
     </section>
 </body>
 
