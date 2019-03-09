@@ -1,12 +1,15 @@
+class Pizzada{
+    constructor(){
+        this.pizza = 0;
+    }
+    static section( str ){
+        $("section").hide();
+        $("#"+str).show();
+    }
+    static init(){
+        return new Date();
+    }
+}
 $(function(){
-    section("title");
+    Pizzada.section("pizzada-title");
 });
-
-function pizzada_section(str){
-    $("section").hide();
-    $("#"+str).show();
-}
-
-function pizzada_init(){
-    
-}
