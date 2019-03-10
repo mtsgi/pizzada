@@ -1,4 +1,4 @@
-var time = 0, point = 0;
+var time = 0, point = 0, score = 0, miss =  0;
 var targets = ["pizza", "class", "constructor", "document", "location", "var", "const", "getElementById", "function()"];
 
 class Pizzada{
@@ -14,7 +14,7 @@ class Pizzada{
         //END
         if( point == 3 ){
             Pizzada.section("pizzada-result");
-            $("#pizzada-time").text(time);
+            $("#pizzada-time").text(Math.floor(time));
             $("#pizzada-times").text("");
             point = 0;
             return time;
@@ -34,8 +34,9 @@ class Pizzada{
                 p.count++;
             }
             if( p.count == p.target.length ){
-                time += Number( Date.now() - start );
-                $("#pizzada-times").html("<div>"+time+"</div>");
+                time += p.target.length / Number( Date.now() - start ) * 100000;
+                $("#pizzada-times").html("<div>"+Math.floor(time)+"</div>");
+                score += time;
                 point++;
                 $(document).off();
                 Pizzada.pizza();
