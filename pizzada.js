@@ -1,5 +1,5 @@
 var time = 0, point = 0, score = 0, miss =  0;
-var targets = ["pizza", "class", "constructor", "document", "location", "var", "const", "getElementById", "function()"];
+var targets = [];
 
 class Pizzada{
     constructor(string){
@@ -45,5 +45,6 @@ class Pizzada{
     }
 }
 $(function(){
+    $.getJSON("targets.json", (data)=>{ targets = data; });
     Pizzada.section("pizzada-title");
 });
