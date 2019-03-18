@@ -21,5 +21,8 @@
     "parseInt()",
     "#include <stdio.h>",
     "printf()",
-    "git commit -m"
+    "git commit -m",
+    "https://github.com/",
+    "(\"\")",
+    ""
 ]

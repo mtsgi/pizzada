@@ -12,7 +12,8 @@ class Pizzada{
     }
     static pizza(){
         //END
-        if( point == 3 ){
+        if( point == 0 ) time = 0;
+        else if( point == 3 ){
             Pizzada.section("pizzada-result");
             $("#pizzada-time").text(Math.floor(time));
             $("#pizzada-times").text("");
