@@ -1,5 +1,6 @@
 var time = 0, point = 0, score = 0, miss =  0;
 var targets = [];
+var ranking = new Array();
 
 class Pizzada{
     constructor(string){
@@ -12,8 +13,12 @@ class Pizzada{
     }
     static pizza(){
         //END
-        if( point == 0 ) time = 0;
+        if( point == 0 ){
+            $("#pizzada-times").html("<div>0</div>");
+            time = 0;
+        }
         else if( point == 3 ){
+            ranking.push(Math.floor(time));
             Pizzada.section("pizzada-result");
             $("#pizzada-time").text(Math.floor(time));
             $("#pizzada-times").text("");
