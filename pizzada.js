@@ -22,6 +22,12 @@ class Pizzada{
             Pizzada.section("pizzada-result");
             $("#pizzada-time").text(Math.floor(time));
             $("#pizzada-times").text("");
+            //Sort Ranking
+            ranking.sort((a,b)=>{return b-a});
+            localStorage.setItem("pizzada-ranking", ranking);
+            //Display Ranking
+            $("#pizzada-ranklist").empty();
+            for( let i of ranking ) $("#pizzada-ranklist").append("<div>" +i+ "</div>")
             point = 0;
             return time;
         }
@@ -35,6 +41,7 @@ class Pizzada{
         $("#pizzada-enter").text("");
         //BIND
         $(document).on("keydown", (event) => {
+            event.preventDefault();
             if( p.target[p.count] == event.key ){
                 $("#pizzada-enter").append( event.key );
                 p.count++;
@@ -52,5 +59,7 @@ class Pizzada{
 }
 $(function(){
     $.getJSON("targets.json", (data)=>{ targets = data; });
+    if( localStorage.getItem("pizzada-ranking") ) ranking = localStorage.getItem("pizzada-ranking").split(",");
+    for( let i of ranking ) $("#pizzada-ranklist").append("<div>" +i+ "</div>")
     Pizzada.section("pizzada-title");
 });

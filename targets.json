@@ -24,5 +24,10 @@
     "git commit -m",
     "https://github.com/",
     "(\"\")",
-    ""
+    "display",
+    "inline-block",
+    "text-decoration",
+    "box-sizing",
+    "border-radius",
+    "padding"
 ]

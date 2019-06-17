@@ -12,6 +12,22 @@ section a{
     cursor: pointer;
     text-decoration: underline;
 }
+section h1{
+    border-bottom: 3px solid #000000;
+}
+
+#pizzada-start{
+    font-size: 24px;
+    background: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 10px;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
+    border: 1px solid #909090;
+    border-radius: 5px;
+}
+
 #pizzada-game{
     padding-top: 70px;
 }
@@ -43,4 +59,14 @@ section a{
 #pizzada-time{
     font-weight: 900;
     font-size: 30px;
+}
+#pizzada-ranklist{
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 8px;
+    border: 1px solid #909090;
+}
+#pizzada-ranklist > div{
+    padding: 2px 0;
+    background : linear-gradient(#F8F8F8 0%,#E0E0E0 100%);
 }

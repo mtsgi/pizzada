@@ -12,14 +12,14 @@
 <body id="body">
     <section id="pizzada-title">
         <h1>ピザ打</h1>
-        <a onclick="Pizzada.pizza()">スタート</a><br>
+        <a id="pizzada-start" onclick="Pizzada.pizza()">スタート</a><br>
         <a onclick="Pizzada.section('pizzada-ranking')">ランキング</a>
     </section>
 
     <section id="pizzada-ranking">
         <a onclick="Pizzada.section('pizzada-title')">戻る</a>
-        ランキング<br>
-        <a onclick="alert(ranking)">表示する</a>
+        ランキング
+        <div id="pizzada-ranklist"></div>
     </section>
 
     <section id="pizzada-game">
