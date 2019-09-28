@@ -10,6 +10,8 @@ class Pizzada{
     static section( str ){
         $("section").hide();
         $("#"+str).show();
+        score = 0;
+        point = 0;
     }
     static pizza(){
         //END
@@ -27,7 +29,7 @@ class Pizzada{
             localStorage.setItem("pizzada-ranking", ranking);
             //Display Ranking
             $("#pizzada-ranklist").empty();
-            for( let i of ranking ) $("#pizzada-ranklist").append("<div>" +i+ "</div>")
+            for( let i of ranking ) $("#pizzada-ranklist").append("<div class='kit-box'>" +i+ "</div>")
             point = 0;
             return time;
         }
@@ -60,6 +62,6 @@ class Pizzada{
 $(function(){
     $.getJSON("targets.json", (data)=>{ targets = data; });
     if( localStorage.getItem("pizzada-ranking") ) ranking = localStorage.getItem("pizzada-ranking").split(",");
-    for( let i of ranking ) $("#pizzada-ranklist").append("<div>" +i+ "</div>")
+    for( let i of ranking ) $("#pizzada-ranklist").append("<div class='kit-box'>" +i+ "</div>")
     Pizzada.section("pizzada-title");
 });
