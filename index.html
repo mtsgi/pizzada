@@ -5,27 +5,38 @@
     <meta charset="utf-8">
     <title>ピザ打</title>
     <script src="jquery.min.js"></script>
-    <link rel="stylesheet" href="pizzada.css">
     <script src="pizzada.js"></script>
+    <link rel="stylesheet" href="https://mtsgi.github.io/kitstrap/d/kitstrap.css">
+    <link rel="stylesheet" href="https://mtsgi.github.io/kitstrap/d/kitstrap-font.css">
+    <link rel="stylesheet" href="pizzada.css">
 </head>
 
 <body id="body">
     <section id="pizzada-title">
-        <h1>ピザ打</h1>
-        <a id="pizzada-start" onclick="Pizzada.pizza()">スタート</a><br>
+        <h2>Pizzada</h2>
+        <div class="kit-font-s">ピ　ザ　打</div>
+        <kit-space class="m"></kit-space>
+        <a class="kit-button-alt orange m" onclick="Pizzada.pizza()">スタート</a>
+        <kit-space class="m"></kit-space>
         <a onclick="Pizzada.section('pizzada-ranking')">ランキング</a>
+        <kit-space class="m"></kit-space>
+        <blockquote class="kit-font-s kit-text-l">
+            ・このゲームはスマートフォンには対応していません。<br>
+            ・このゲームをプレー中はキーボード入力が制御され、一部のコマンドが使用できなくなります。
+        </blockquote>
     </section>
 
     <section id="pizzada-ranking">
-        <a onclick="Pizzada.section('pizzada-title')">戻る</a>
+        <a class="kit-right" onclick="Pizzada.section('pizzada-title')">戻る</a>
         ランキング
-        <div id="pizzada-ranklist"></div>
+        <div id="pizzada-ranklist" class="kit-container m-m"></div>
     </section>
 
     <section id="pizzada-game">
-            <div id="pizzada-target"></div>
-            <div id="pizzada-enter"></div>
-            <div id="pizzada-times"></div>
+        <a class="kit-right" onclick="Pizzada.section('pizzada-title')">中断</a>
+        <div id="pizzada-target"></div>
+        <div id="pizzada-enter"></div>
+        <div id="pizzada-times"></div>
     </section>
 
     <section id="pizzada-result">
