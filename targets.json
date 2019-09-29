@@ -11,7 +11,7 @@
     "unsigned long long",
     "border-radius",
     "toLowerCase()",
-    "$",
+    "${}",
     "location.href",
     "private",
     "=>",
@@ -29,5 +29,17 @@
     "text-decoration",
     "box-sizing",
     "border-radius",
-    "padding"
+    "padding",
+    "typeof",
+    "instanceof",
+    "target=\"_blank\"",
+    "flex",
+    "<% end %>",
+    "#{}",
+    "\"use strict\"",
+    "t.references",
+    "foreign_key: true",
+    "debugger",
+    "binding.pry",
+    "_prefix: true"
 ]

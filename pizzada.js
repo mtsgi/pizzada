@@ -11,7 +11,6 @@ class Pizzada{
         $("section").hide();
         $("#"+str).show();
         score = 0;
-        point = 0;
     }
     static pizza(){
         //END
@@ -45,8 +44,8 @@ class Pizzada{
         $(document).on("keydown", (event) => {
             event.preventDefault();
             if( p.target[p.count] == event.key ){
-                $("#pizzada-enter").append( event.key );
                 p.count++;
+                $("#pizzada-enter").text( p.target.substr(0, p.count) );
             }
             if( p.count == p.target.length ){
                 time += p.target.length / Number( Date.now() - start ) * 100000;
@@ -56,7 +55,14 @@ class Pizzada{
                 $(document).off();
                 Pizzada.pizza();
             }
-        })
+        });
+    }
+    static end(){
+        $("section").hide();
+        $("#pizzada-title").show();
+        time = 0;
+        point = 0;
+        score = 0;
     }
 }
 $(function(){
