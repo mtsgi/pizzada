@@ -34,7 +34,10 @@
 
     <section id="pizzada-game">
         <a class="kit-right" onclick="Pizzada.end()">中断</a>
-        <div id="pizzada-target"></div>
+        <div id="pizzada-target-area">
+            <div id="pizzada-target"></div>
+            <div id="pizzada-wrong"></div>
+        </div>
         <div id="pizzada-enter"></div>
         <div id="pizzada-times"></div>
     </section>
@@ -42,6 +45,7 @@
     <section id="pizzada-result">
         結果
         <div id="pizzada-time">0</div>
+        <div id="pizzada-miss">タイプミス:0回</div>
         <a onclick="Pizzada.section('pizzada-title')">タイトルへ</a>
     </section>
 </body>
