@@ -22,6 +22,7 @@ class Pizzada{
             ranking.push(Math.floor(time));
             Pizzada.section("pizzada-result");
             $("#pizzada-time").text(Math.floor(time));
+            $("#pizzada-miss").html(`タイプミス:${miss}回`);
             $("#pizzada-times").text("");
             //Sort Ranking
             ranking.sort((a,b)=>{return b-a});
@@ -30,6 +31,7 @@ class Pizzada{
             $("#pizzada-ranklist").empty();
             for( let i of ranking ) $("#pizzada-ranklist").append("<div class='kit-box'>" +i+ "</div>")
             point = 0;
+            miss = 0;
             return time;
         }
         var p;
@@ -40,12 +42,19 @@ class Pizzada{
         p = new Pizzada( targets[ran] );
         $("#pizzada-target").text( p.target );
         $("#pizzada-enter").text("");
+        $("#pizzada-wrong").empty();
         //BIND
         $(document).on("keydown", (event) => {
             event.preventDefault();
             if( p.target[p.count] == event.key ){
                 p.count++;
                 $("#pizzada-enter").text( p.target.substr(0, p.count) );
+            }
+            else {
+                if( event.key != 'Shift' ){
+                    $("#pizzada-wrong").append(`<span>${p.target.substr(0, p.count)}<i>${event.key}</i></span>`);
+                    miss ++;
+                }
             }
             if( p.count == p.target.length ){
                 time += p.target.length / Number( Date.now() - start ) * 100000;
@@ -63,6 +72,7 @@ class Pizzada{
         time = 0;
         point = 0;
         score = 0;
+        miss = 0;
     }
 }
 $(function(){
