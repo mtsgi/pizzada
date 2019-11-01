@@ -24,6 +24,7 @@ class Pizzada{
             $("#pizzada-time").text(Math.floor(time));
             $("#pizzada-miss").html(`タイプミス:${miss}回`);
             $("#pizzada-times").text("");
+            $("#pizzada-tweet").attr("href", `https://twitter.com/intent/tweet?url=http://j.mp/dapizza&text=ピザ打で${Math.floor(time)}点取りました！(タイプミス ${miss}回)&hashtags=pizzada`);
             //Sort Ranking
             ranking.sort((a,b)=>{return b-a});
             localStorage.setItem("pizzada-ranking", ranking);
